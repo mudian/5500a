@@ -1,0 +1,34 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6e775a22-9e2c-41d9-9854-ffe8aa99f8c3}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="Fluke5500a.cbproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Fluke5500a">
+    <MSBuild Projects="Fluke5500a.cbproj" Targets="" />
+  </Target>
+  <Target Name="Fluke5500a:Clean">
+    <MSBuild Projects="Fluke5500a.cbproj" Targets="Clean" />
+  </Target>
+  <Target Name="Fluke5500a:Make">
+    <MSBuild Projects="Fluke5500a.cbproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Fluke5500a" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Fluke5500a:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Fluke5500a:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
